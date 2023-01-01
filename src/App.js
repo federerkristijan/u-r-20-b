@@ -13,16 +13,16 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route href="/" exact>
+          <Route path="/" exact>
             <Redirect to="/quotes" />
           </Route>
-          <Route href="/quotes" exact>
+          <Route path="/quotes" exact>
             <AllQuotes />
           </Route>
-          <Route href="/quote/:quotesId">
+          <Route path="/quote/:quotesId">
             <QuoteDetail />
           </Route>
-          <Route href="/new-quote">
+          <Route path="/new-quote">
             <NewQuotes />
           </Route>
         </Switch>

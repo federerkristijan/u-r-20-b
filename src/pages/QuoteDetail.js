@@ -5,10 +5,10 @@ const QuoteDetail = () => {
   const params = useParams();
 
   return (
-    <section>
+    <div>
       <h1>Qoute Detail</h1>
       <p>{params.quoteId}</p>
-    </section>
+    </div>
   )
 }
 

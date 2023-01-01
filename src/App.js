@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import AllQuotes from "./pages/AllQuotes";
 import NewQuote from "./pages/NewQuote";
 import QuoteDetail from "./pages/QuoteDetail";
-// import Navbar from "./components/Navbar";
+// import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (

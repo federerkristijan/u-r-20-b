@@ -1,8 +1,8 @@
 import { Route, Switch } from "react-router-dom";
 
-import NewQuotes from "./components/comments/NewCommentForm";
-import AllQuotes from "./components/comments/Comments";
-import QuoteDetail from "./components/comments/Comments";
+import NewQuotes from "./pages/AllQuotes";
+import AllQuotes from "./pages/NewQuote";
+import QuoteDetail from "./pages/QuoteDetail";
 import Navbar from "./components/Navbar";
 
 function App() {

@@ -2,7 +2,7 @@ import React from 'react'
 
 const QuoteDetail = () => {
   return (
-    <div>QuoteDetail</div>
+    <h1>Qoute Detail</h1>
   )
 }
 

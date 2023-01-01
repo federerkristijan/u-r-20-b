@@ -9,7 +9,7 @@ const Navbar = () => {
       </div>
       <div className="right">
         <ul>
-          <li><Link to="/all-quotes" ><h2>All Quotes</h2></Link></li>
+          <li><Link to="/quotes" ><h2>All Quotes</h2></Link></li>
           <li><Link to="/new-quote"><h2>Add a quote</h2></Link></li>
         </ul>
       </div>

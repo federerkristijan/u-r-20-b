@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewQuote = () => {
   return (
-    <div>NewQuote</div>
+    <h1>New Qoute</h1>
   )
 }
 

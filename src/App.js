@@ -13,7 +13,7 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route href="/quote-detail" element={<QuoteDetail />} />
+          <Route href="/quote/:quotesID" element={<QuoteDetail />} />
           <Route href="/new-quote" element={<NewQuotes />} />
           <Route href="/all-quotes" element={<AllQuotes />} />
         </Switch>

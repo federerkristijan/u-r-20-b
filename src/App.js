@@ -1,13 +1,18 @@
-import { Routes, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+
+import NewQuotes from "./components/comments/NewCommentForm";
+import AllQuotes from "./components/comments/Comments";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div>
       <header>
-        
+        <Navbar />
       </header>
       <main>
-        <Routes></Routes>
+          <Route href="/new-quote" element={<NewQuotes />} />
+          <Route href="/all-quotes" element={<AllQuotes />} />
       </main>
     </div>
   );

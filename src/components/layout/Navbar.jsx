@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 
@@ -12,14 +12,14 @@ const Navbar = () => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <Link to="/quotes">
+            <NavLink to="/quotes">
               <h2>All Quotes</h2>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/new-quote">
+            <NavLink to="/new-quote">
               <h2>Add a quote</h2>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

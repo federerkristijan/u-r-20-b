@@ -5,11 +5,11 @@ import classes from "./MainNavigation.module.css";
 
 const Navbar = () => {
   return (
-    <header>
-      <div>
+    <header className={classes.header}>
+      <div className={classes.logo}>
         <h1>Great Quotes</h1>
       </div>
-      <nav>
+      <nav className={classes.nav}>
         <ul>
           <li>
             <Link to="/quotes">

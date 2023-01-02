@@ -3,14 +3,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import AllQuotes from "./pages/AllQuotes";
 import NewQuote from "./pages/NewQuote";
 import QuoteDetail from "./pages/QuoteDetail";
-// import Navbar from "./components/layout/Navbar";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
     <div>
-      {/* <header>
+      <header>
         <Navbar />
-      </header> */}
+      </header>
       <main>
         <Switch>
           <Route path="/" exact>

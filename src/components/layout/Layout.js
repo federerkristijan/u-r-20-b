@@ -1,6 +1,14 @@
-const Layout = () => {
+import classes from "./Layout.module.css"
+import Navbar from "./Navbar"
+
+const Layout = (props) => {
   return (
-    <div>Layout</div>
+    <section>
+      <Navbar />
+      <main className={classes.main}>
+        {props.children}
+      </main>
+    </section>
   )
 }
 

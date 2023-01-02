@@ -1,20 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="left">
+    <header>
+      <div>
         <h1>Great Quotes</h1>
       </div>
-      <div className="right">
+      <nav>
         <ul>
-          <li><Link to="/quotes" ><h2>All Quotes</h2></Link></li>
-          <li><Link to="/new-quote"><h2>Add a quote</h2></Link></li>
+          <li>
+            <Link to="/quotes">
+              <h2>All Quotes</h2>
+            </Link>
+          </li>
+          <li>
+            <Link to="/new-quote">
+              <h2>Add a quote</h2>
+            </Link>
+          </li>
         </ul>
-      </div>
-    </div>
-  )
-}
+      </nav>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,20 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+import classes from "./MainNavigation.module.css";
 
 const Navbar = () => {
   return (
-    <div>
-      <div className="left">
+    <header className={classes.header}>
+      <div className={classes.logo}>
         <h1>Great Quotes</h1>
       </div>
-      <div className="right">
+      <nav className={classes.nav}>
         <ul>
-          <li><Link to="/quotes" ><h2>All Quotes</h2></Link></li>
-          <li><Link to="/new-quote"><h2>Add a quote</h2></Link></li>
+          <li>
+            <NavLink to="/quotes" activeClassName={classes.active}>
+              <h2>All Quotes</h2>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/new-quote" activeClassName={classes.active}>
+              <h2>Add a quote</h2>
+            </NavLink>
+          </li>
         </ul>
-      </div>
-    </div>
-  )
-}
+      </nav>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

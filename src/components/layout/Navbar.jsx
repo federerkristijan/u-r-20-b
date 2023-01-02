@@ -12,12 +12,12 @@ const Navbar = () => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink to="/quotes">
+            <NavLink to="/quotes" activeClassName={classes.active}>
               <h2>All Quotes</h2>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/new-quote">
+            <NavLink to="/new-quote" activeClassName={classes.active}>
               <h2>Add a quote</h2>
             </NavLink>
           </li>

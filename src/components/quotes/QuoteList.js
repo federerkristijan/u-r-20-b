@@ -9,20 +9,24 @@ const QuoteList = (props) => {
   const location = useLocation();
 
   console.log(location);
-  
+
   // browser's built-in constructor function - vanilla JS style
-  new URLSearchParams(location.search);
+  const queryParams = new URLSearchParams(location.search);
+
+  // no need for 'desc' const, as 'asc' const false serves its purpose
+  const isSortingAscending = queryParams.get('sort') === 'asc';
 
 
   const changeSortingHandler = () => {
     // 'push' makes a new one & keeps the old, 'replace' makes a new one
-    history.push('/quotes?sort=asc')
+    history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'))
   }
 
   return (
     <Fragment>
       <div className={classes.sorting}>
-        <button onClick={changeSortingHandler}>Sort Ascending</button>
+        {/* dynamically changing the button text */}
+        <button onClick={changeSortingHandler}>Sort {isSortingAscending ? 'Desceding' : 'Ascending'}</button>
       </div>
       <ul className={classes.list}>
         {props.quotes.map((quote) => (

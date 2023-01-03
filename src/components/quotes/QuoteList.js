@@ -1,11 +1,18 @@
 import { Fragment } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
 const QuoteList = (props) => {
   const history = useHistory();
+  const location = useLocation();
+
+  console.log(location);
+  
+  // browser's built-in constructor function - vanilla JS style
+  new URLSearchParams(location.search);
+
 
   const changeSortingHandler = () => {
     // 'push' makes a new one & keeps the old, 'replace' makes a new one

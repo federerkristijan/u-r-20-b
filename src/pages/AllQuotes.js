@@ -9,7 +9,7 @@ export const Home_Quotes = [
   {
     id: "q2",
     author: "Kuku",
-    text: "Hoomans are again suck with their machines",
+    text: "Hoomans are again stuck with their machines",
   },
   {
     id: "q3",

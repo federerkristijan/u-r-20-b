@@ -1,6 +1,6 @@
 import QuoteList from "../components/quotes/QuoteList";
 
-const Home_Quotes = [
+export const Home_Quotes = [
   {
     id: "q1",
     author: "Kiki",

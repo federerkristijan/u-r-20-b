@@ -2,14 +2,17 @@ import React from 'react'
 import { useParams, Route } from 'react-router-dom'
 
 import Comments from "../components/comments/Comments";
+import HighlightedQuote from '../components/quotes/HighlightedQuote';
+import { Home_Quotes } from './AllQuotes';
 
 const QuoteDetail = () => {
   const params = useParams();
 
+  const quote = Home_Quotes.find(quote => quote.id === params.quoteId);
+
   return (
     <div>
-      <h1>Qoute Detail</h1>
-      <p>{params.quoteId}</p>
+      <HighlightedQuote text={quote.text} author={quote.author}/>
       <Route path={`/quotes/${params.quoteId}/comments`} >
         <Comments />
       </Route>

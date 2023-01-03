@@ -21,6 +21,10 @@ const QuoteForm = (props) => {
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 
+  const finishEntering = () => {
+    setIsEntering(false);
+  };
+
   const formFocusHandler = () => {
     setIsEntering(true);
     console.log("focus");
@@ -28,7 +32,10 @@ const QuoteForm = (props) => {
 
   return (
     <div>
-      <Prompt when={isEntering} message={(location) => 'Are you sure you want to leave the site?'} />
+      <Prompt
+        when={isEntering}
+        message={(location) => "Are you sure you want to leave the site?"}
+      />
       <Card>
         <form
           className={classes.form}
@@ -50,7 +57,9 @@ const QuoteForm = (props) => {
             <textarea id="text" rows="5" ref={textInputRef}></textarea>
           </div>
           <div className={classes.actions}>
-            <button className="btn">Add Quote</button>
+            <button className="btn" onClick={finishEntering}>
+              Add Quote
+            </button>
           </div>
         </form>
       </Card>

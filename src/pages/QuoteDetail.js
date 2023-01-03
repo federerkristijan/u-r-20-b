@@ -10,6 +10,10 @@ const QuoteDetail = () => {
 
   const quote = Home_Quotes.find(quote => quote.id === params.quoteId);
 
+  if (!quote) {
+    return <p>No quote found!</p>
+  }
+
   return (
     <div>
       <HighlightedQuote text={quote.text} author={quote.author}/>

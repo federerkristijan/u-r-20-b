@@ -1,6 +1,6 @@
-import React from "react";
+import QuoteList from "../components/quotes/QuoteList";
 
-const quotes = [
+const Home_Quotes = [
   {
     id: "q1",
     author: "Kiki",
@@ -24,7 +24,7 @@ const quotes = [
 ];
 
 const AllQuotes = () => {
-  return <h1>All Qoutes</h1>;
+  return <QuoteList quotes={Home_Quotes} />
 };
 
 export default AllQuotes;

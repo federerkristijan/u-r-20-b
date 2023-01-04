@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+// location has a pathname!
 import { useHistory, useLocation } from 'react-router-dom';
 
 import QuoteItem from './QuoteItem';
@@ -16,6 +17,7 @@ const sortQuotes = (quotes, ascending) => {
 
 const QuoteList = (props) => {
   const history = useHistory();
+  // useLocation for a certain loaded path, useRouteMatch for all paths
   const location = useLocation();
 
   console.log(location);
@@ -30,7 +32,14 @@ const QuoteList = (props) => {
 
   const changeSortingHandler = () => {
     // 'push' makes a new one & keeps the old, 'replace' makes a new one
-    history.push('/quotes?sort=' + (isSortingAscending ? 'desc' : 'asc'));
+    // v.1
+    // history.push(`${location.pathname}?sort=${(isSortingAscending ? 'desc' : 'asc')}`);
+
+    // v.2
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${(isSortingAscending ? 'desc' : 'asc')}`
+    })
   }
 
   return (

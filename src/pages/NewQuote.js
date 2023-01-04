@@ -11,6 +11,7 @@ const NewQuote = () => {
 
   useEffect(() => {
     if (status === 'completed') {
+      // back button
       history.push('/quotes')
     }
   }, [status, history])
@@ -19,12 +20,9 @@ const NewQuote = () => {
   const addQuoteHandler = (quoteData) => {
     sendRequest(quoteData);
     console.log(quoteData);
-
-    // back button
-    history.push("/quotes");
   };
 
-  return <QuoteForm onAddQuote={addQuoteHandler} />;
+  return <QuoteForm isLoading={status === 'pending'} onAddQuote={addQuoteHandler} />;
 };
 
 export default NewQuote;

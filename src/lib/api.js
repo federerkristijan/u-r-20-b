@@ -1,4 +1,4 @@
-const FIREBASE_DOMAIN = 'https://udemy2-c8d5c-default-rtdb.europe-west1.firebasedatabase.app';
+const FIREBASE_DOMAIN = 'https://udemy-routes-6e256-default-rtdb.europe-west1.firebasedatabase.app';
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);

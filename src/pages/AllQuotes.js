@@ -4,6 +4,7 @@ import QuoteList from "../components/quotes/QuoteList";
 import useHttp from "../hooks/use-http";
 import { getAllQuotes } from "../lib/api";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
+import NoQuotesFound from '../components/quotes/NoQuotesFound'
 
 // export const Home_Quotes = [
 //   {
@@ -46,6 +47,10 @@ const AllQuotes = () => {
     return <p centered focused>
       {error}
     </p>
+  }
+
+  if (status === 'completed' && (!loadedQuotes || loadedQuotes.length === 0)) {
+    return <NoQuotesFound />
   }
 
 

@@ -54,7 +54,7 @@ const AllQuotes = () => {
   }
 
 
-  return <QuoteList quotes={Home_Quotes} />
+  return <QuoteList quotes={loadedQuotes} />
 };
 
 export default AllQuotes;

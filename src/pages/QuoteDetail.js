@@ -19,9 +19,10 @@ const QuoteDetail = () => {
   return (
     <div>
       <HighlightedQuote text={quote.text} author={quote.author} />
+      {/* match.path is extracted from the existing route definition in App.js */}
       <Route path={`${match.path}`} exact>
         <div className="centered">
-          <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}>
+          <Link className="btn--flat" to={`${match.url}/comments`}>
             Load Comments
           </Link>
         </div>

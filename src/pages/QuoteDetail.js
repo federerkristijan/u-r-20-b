@@ -1,12 +1,14 @@
-import React from "react";
-import { useParams, Route, Link } from "react-router-dom";
+import { useParams, Route, Link, useRouteMatch } from "react-router-dom";
 
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import { Home_Quotes } from "./AllQuotes";
 
 const QuoteDetail = () => {
+  const match = useRouteMatch();
   const params = useParams();
+
+  console.log(match)
 
   const quote = Home_Quotes.find((quote) => quote.id === params.quoteId);
 

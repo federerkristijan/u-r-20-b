@@ -42,6 +42,12 @@ const AllQuotes = () => {
     </div>
   }
 
+  if (error) {
+    return <p centered focused>
+      {error}
+    </p>
+  }
+
 
   return <QuoteList quotes={Home_Quotes} />
 };

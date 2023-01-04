@@ -10,12 +10,10 @@ import LoadingSpinner from "../components/UI/LoadingSpinner";
 const QuoteDetail = () => {
   const match = useRouteMatch();
   const params = useParams();
+  const { quoteId } = params;
+  const { sendRequest, status, data: loadedQuote, error } = useHttp(getSingleQuote, true);
 
   console.log(match)
-
-  const { quoteId } = params;
-
-  const { sendRequest, status, data: loadedQuote, error } = useHttp(getSingleQuote, true);
 
   useEffect(() => {
     sendRequest(quoteId);

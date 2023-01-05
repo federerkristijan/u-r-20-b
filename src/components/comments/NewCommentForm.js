@@ -7,11 +7,13 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 
 const NewCommentForm = (props) => {
   const commentTextRef = useRef();
+
   const { sendRequest, status, error } = useHttp(addComment);
+
   const { onAddedComment } = props;
 
   useEffect(() => {
-    if(status === 'completed' && !error) {
+    if (status === "completed" && !error) {
       onAddedComment();
     }
   }, [status, error, onAddedComment]);
@@ -23,14 +25,17 @@ const NewCommentForm = (props) => {
 
     // optional: Could validate here
 
-    sendRequest({
-      text: enteredText,
-    });
+    sendRequest(
+      {
+        text: enteredText,
+      },
+      props.quoteId
+    );
   };
 
   return (
     <form className={classes.form} onSubmit={submitFormHandler}>
-      {status === 'pending' && (
+      {status === "pending" && (
         <div className="centered">
           <LoadingSpinner />
         </div>

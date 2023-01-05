@@ -61,7 +61,7 @@ const Comments = () => {
           onAddedComment={addedCommentHanlder}
         />
       )}
-      <p>Comments...</p>
+      {comments}
     </section>
   );
 };

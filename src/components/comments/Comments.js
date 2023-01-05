@@ -9,7 +9,7 @@ import NewCommentForm from './NewCommentForm';
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
   const params = useParams();
-  const { sendRequest, status, error } = useHttp(getAllComments);
+  const { sendRequest, status, data: loadedComments } = useHttp(getAllComments);
 
   const startAddCommentHandler = () => {
     setIsAddingComment(true);

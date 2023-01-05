@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import useHttp from "../../hooks/use-http";
@@ -25,9 +25,10 @@ const Comments = () => {
   };
 
 
-  const addedCommentHanlder = () => {
-
-  };
+  // useCallBack to avoid infinite loop with onAddedComment prop
+  const addedCommentHanlder = useCallback(() => {
+    sendRequest(quoteId)
+  }, [sendRequest, quoteId]);
 
   let comments;
 

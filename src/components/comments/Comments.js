@@ -6,6 +6,7 @@ import { getAllComments } from "../../lib/api";
 import classes from "./Comments.module.css";
 import NewCommentForm from "./NewCommentForm";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import CommentsList from "./CommentsList";
 
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
@@ -23,20 +24,23 @@ const Comments = () => {
     setIsAddingComment(true);
   };
 
+
   const addedCommentHanlder = () => {
-    let comments;
 
-    if (status === "pending") {
-      comments = (
-        <div className="centered">
-          <LoadingSpinner />
-        </div>
-      );
-    }
   };
+  
+  let comments;
 
-  if (status === "completed") {
-    
+  if (status === "pending") {
+    comments = (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (status === "completed" && loadedComments) {
+    comments = <CommentsList comments={loadedComments} />
   }
 
   return (

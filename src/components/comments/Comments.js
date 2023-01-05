@@ -28,7 +28,7 @@ const Comments = () => {
   const addedCommentHanlder = () => {
 
   };
-  
+
   let comments;
 
   if (status === "pending") {
@@ -39,8 +39,12 @@ const Comments = () => {
     );
   }
 
-  if (status === "completed" && loadedComments) {
+  if (status === "completed" && loadedComments && loadedComments.length > 0) {
     comments = <CommentsList comments={loadedComments} />
+  };
+
+  if (status === "completed" && (!loadedComments || loadedComments.length === 0)) {
+    comments = <p className="centered">No comment to show</p>
   }
 
   return (

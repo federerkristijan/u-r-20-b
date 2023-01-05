@@ -25,12 +25,12 @@ const NewCommentForm = (props) => {
 
     // optional: Could validate here
 
-    sendRequest(
+    sendRequest({ commentData:
       {
         text: enteredText,
       },
-      props.quoteId
-    );
+      quoteId: props.quoteId
+  });
   };
 
   return (
